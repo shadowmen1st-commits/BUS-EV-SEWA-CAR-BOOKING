@@ -8,7 +8,8 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
-  TextInput
+  TextInput,
+  Linking
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useCustomerAuth } from '../../context/CustomerAuthContext';
@@ -154,6 +155,25 @@ const SignUpScreen = ({ navigation }) => {
                 loading={loading}
                 style={{ marginTop: 8 }}
               />
+              
+              <View style={{ marginTop: 16, alignItems: 'center' }}>
+                <Text style={{ fontSize: 12, color: COLORS.textSecondary, textAlign: 'center' }}>
+                  By signing up, you agree to our{' '}
+                  <Text 
+                    style={{ color: COLORS.primary, textDecorationLine: 'underline' }}
+                    onPress={() => Linking.openURL('https://polite-licorice-1868a9.netlify.app/terms-and-conditions')}
+                  >
+                    Terms & Conditions
+                  </Text>
+                  {' '}and{' '}
+                  <Text 
+                    style={{ color: COLORS.primary, textDecorationLine: 'underline' }}
+                    onPress={() => Linking.openURL('https://polite-licorice-1868a9.netlify.app/privacy-policy')}
+                  >
+                    Privacy Policy
+                  </Text>
+                </Text>
+              </View>
             </>
           ) : (
             <>
