@@ -12,6 +12,7 @@
     "seed": "node src/utils/seedData.js",
     "db:seed": "node src/utils/seedData.js",
     "db:reset": "node src/utils/seedData.js",
+    "seed:client-demo": "node scripts/seed_client_demo.js",
     "test": "jest --runInBand --detectOpenHandles --forceExit"
   },
   "jest": {
